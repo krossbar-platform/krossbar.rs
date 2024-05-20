@@ -50,6 +50,10 @@
             display: flex !important;
             justify-content: center;
         }
+
+        #made-by a {
+            color: rgb(137, 164, 175);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -165,22 +169,24 @@
     <section id="demos" class="bg-white py-12">
         <div class="container mx-auto text-center items-center">
             <h2 class="text-3xl font-bold mb-8"><a name="bus-examples">Bus examples</a></h2>
-            <div class="p-4 bg-gray-50 rounded-lg shadow mb-4">
+
+            <div class="bg-gray-50 rounded-lg shadow mb-4">
                 <div class="flex flex-row">
-                    <div class="w-1/3 p-4">
-                        <h3 class="text-xl font-bold mb-4">Bus monitor</h3>
-                        <p class="flex text-xl">Monitor message exchange using Krossbar monitor tool.</p>
+                    <div class="w-1/3 p-6">
+                        <h3 class="text-2xl font-bold mb-4">Bus monitor</h3>
+                        <p class="flex">Monitor message exchange using Krossbar monitor tool.</p>
                     </div>
                     <div class="flex w-2/3 h-fit">
                         <div class="demo-player" id="bus-demo-1"></div>
                     </div>
                 </div>
             </div>
-            <div class="p-4 bg-gray-50 rounded-lg shadow mb-4">
+
+            <div class="bg-gray-50 rounded-lg shadow mb-4">
                 <div class="flex flex-row">
-                    <div class="w-1/3 p-4">
-                        <h3 class="text-xl font-bold mb-4">Bus connect</h3>
-                        <p class="flex text-xl">Connect to services to inspect registered endpoint, or make interactive
+                    <div class="w-1/3 p-6">
+                        <h3 class="text-2xl font-bold mb-4">Bus connect</h3>
+                        <p class="flex">Connect to services to inspect registered endpoint, or make interactive
                             calls.</p>
                     </div>
                     <div class="flex w-2/3 h-fit">
@@ -188,19 +194,44 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Footer -->
     <footer id="footer" class="blue text-white py-4">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 Linux Service Tools</p>
-            <div class="mt-4">
-                <a href="https://github.com/yourproject" class="ml-4">GitHub</a>
-                <a href="https://crates.io/crates/yourproject" class="ml-4">crates.io</a>
+            <div class="grid grid-cols-1 md:grid-cols-10">
+
+                <div class="flex-column col-span-6">
+                    <div class="flex justify-left items-center">
+                        <img src="https://avatars.githubusercontent.com/u/106885693?s=200&v=4" alt="Krossbar"
+                            class="h-12">
+                        <a href="/" class="ml-6 text-4xl title-mono">Krossbar</a>
+                    </div>
+                </div>
+
+                <div class="flex-column text-left col-span-2">
+                    <a href="https://github.com/krossbar-platform"><span class="text-xl">Github</span></a>
+                    <a href="https://crates.io/search?q=krossbar"><span class="text-xl">Crate</span></a>
+                    <a href="https://docs.rs/releases/search?query=krossbar"><span class="text-xl">Docs</span></a>
+                </div>
+
+                <div class="flex-column text-left col-span-2">
+                    <a href="book/"><span class="text-xl">Book</span></a>
+                    <a href="faq/"><span class="text-xl">FAQ</span></a>
+                    <a href="contacts/"><span class="text-xl">Contacts</span></a>
+                </div>
             </div>
+
         </div>
     </footer>
+
+    <section id="made-by" class="bg-gray-900 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p class="my-1">Made by <a href="https://github.com/alexander-smoktal">Alexander Smoktal</a></p>
+        </div>
+    </section>
 </body>
 
 </html>
