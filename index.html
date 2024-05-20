@@ -7,6 +7,10 @@
     <title>Linux Service Tools</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
         .blue {
             background-color: rgb(9, 35, 58);
         }
@@ -16,8 +20,15 @@
             font-optical-sizing: auto;
         }
 
-        .container {
-            max-width: 70%;
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        .navbar-logo {
+            width: 45px;
+            fill: currentColor;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,10 +45,27 @@
                 <img src="https://avatars.githubusercontent.com/u/106885693?s=200&v=4" alt="Krossbar" class="h-12">
                 <a href="/" class="ml-6 text-4xl title-mono">Krossbar</a>
             </div>
-            <nav>
-                <a href="#features" class="ml-4">Features</a>
-                <a href="#demos" class="ml-4">Demos</a>
-                <a href="#footer" class="ml-4">Contact</a>
+            <nav class="flex justify-left items-center">
+                <a href="https://github.com/krossbar-platform" class="ml-4 flex justify-left items-center"><svg
+                        width="45" height="45" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                        <path class="navbar-logo tk-svg-path"
+                            d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"
+                            fill="#fff"></path>
+                    </svg><span class="ml-1 text-xl">Github</span></a>
+                <a href="#demos" class="ml-6 flex justify-left items-center"><img class="navbar-logo"
+                        src="https://crates.io/assets/cargo.png" role="none" alt=""><span
+                        class="ml-1 text-xl">Crate</span></a>
+                <a href="https://github.com/krossbar-platform" class="ml-6 flex justify-left items-center"><span
+                        class="navbar-logo" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z">
+                            </path>
+                        </svg></span><span class="ml-2 text-xl">Docs</span></a>
+                <a href="book" class="ml-6 flex justify-left items-center"><span class="ml-1 text-xl">Book</span></a>
+                <a href="faq" class="ml-6 flex justify-left items-center"><span class="ml-1 text-xl">FAQ</span></a>
+                <a href="contacts" class="ml-6 flex justify-left items-center"><span
+                        class="ml-1 text-xl">Contacts</span></a>
             </nav>
         </div>
     </header>
@@ -46,7 +74,8 @@
     <section class="bg-white py-12">
         <div class="container mx-auto text-center ">
             <h1 class="text-4xl font-bold">Convenient Linux services</h1>
-            <p class="mt-4 text-lg">Your one-stop solution for managing Linux services efficiently.</p>
+            <p class="mt-4 text-xl">A set of Linux tool to develop service-based solutions, utilizing Rust safety and
+                robustness.</p>
         </div>
     </section>
 
@@ -56,17 +85,24 @@
             <h2 class="text-3xl font-bold mb-8">Core Features</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="p-4 bg-white rounded-lg shadow">
+                    <img src="images/feature_bus.png" alt="Bus Image" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold">Bus</h3>
-                    <p class="mt-2">Description of the first feature. It provides great benefits and functionalities.
+                    <p class="mt-2">Connect services using fast permission-based bus. Make remote
+                        procedure calls, subscribe to signals and maintain states. Use monitoring tools to watch message
+                        exchange in real time.
                     </p>
                 </div>
                 <div class="p-4 bg-white rounded-lg shadow">
+                    <img src="images/feature_log.png" alt="Log Image" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold">Logging</h3>
-                    <p class="mt-2">Description of the second feature. It is designed to enhance your productivity.</p>
+                    <p class="mt-2">Keep you service logs one place. Monitor and filter logs as you need. Manage logging
+                        settings in one place using management tools.</p>
                 </div>
                 <div class="p-4 bg-white rounded-lg shadow">
+                    <img src="images/feature_settings.png" alt="Settings Image" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold">App settings</h3>
-                    <p class="mt-2">Description of the third feature. It integrates seamlessly with other tools.</p>
+                    <p class="mt-2">Store and query service state. View service state in real time. Update and read
+                        state automatically across service runs.</p>
                 </div>
             </div>
         </div>
