@@ -1,0 +1,103 @@
+{{> header}}
+
+<!-- Hero Section -->
+<section class="bg-white py-12">
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold">Convenient Linux services</h1>
+        <p class="mt-4 text-xl">A set of Linux tool to develop service-based
+            solutions, utilizing Rust safety and
+            robustness.</p>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="bg-gray-50 py-12">
+    <div class="container mx-auto text-center p-4">
+        <h2 class="text-3xl font-bold mb-8">Core Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-4 bg-white rounded-lg shadow flex-column">
+                <img src="images/feature_bus.png" alt="Bus Image"
+                    class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">Bus</h3>
+                <p class="mt-2">Connect services using fast permission-based
+                    bus. Make remote
+                    procedure calls, subscribe to signals and maintain
+                    states. Use monitoring tools to watch message
+                    exchange in real time.
+                </p>
+                <a href="#bus-examples">
+                    <button type="button"
+                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
+                        Examples
+                    </button>
+                </a>
+            </div>
+            <div class="p-4 bg-white rounded-lg shadow flex-column">
+                <img src="images/feature_log.png" alt="Log Image"
+                    class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">Logging</h3>
+                <p class="mt-2">Keep you service logs one place. Monitor and
+                    filter logs as you need. Manage logging
+                    settings in one place using management tools.</p>
+                <a href="#log-examples">
+                    <button type="button"
+                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
+                        Examples
+                    </button>
+                </a>
+            </div>
+            <div class="p-4 bg-white rounded-lg shadow flex-column">
+                <img src="images/feature_settings.png" alt="Settings Image"
+                    class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">App settings</h3>
+                <p class="mt-2">Store and query service state. View service
+                    state in real time. Update and read
+                    state automatically across service runs.</p>
+                <a href="#settings-examples">
+                    <button type="button"
+                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
+                        Examples
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Demos Section -->
+<section id="demos" class="bg-white py-12">
+    <div class="container mx-auto text-center items-center p-4">
+        <h2 class="text-3xl font-bold mb-8"><a name="bus-examples">Bus
+                examples</a></h2>
+
+        <div class="bg-gray-50 rounded-lg shadow mb-4">
+            <div class="flex flex-row">
+                <div class="w-1/3 p-6">
+                    <h3 class="text-2xl font-bold mb-4">Bus monitor</h3>
+                    <p class="flex">Monitor message exchange using Krossbar
+                        monitor tool.</p>
+                </div>
+                <div class="flex w-2/3 h-fit">
+                    <div class="demo-player" id="bus-demo-1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg shadow mb-4">
+            <div class="flex flex-row">
+                <div class="w-1/3 p-6">
+                    <h3 class="text-2xl font-bold mb-4">Bus connect</h3>
+                    <p class="flex">Connect to services to inspect
+                        registered endpoint, or make interactive
+                        calls.</p>
+                </div>
+                <div class="flex w-2/3 h-fit">
+                    <div class="demo-player" id="bus-demo-2"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{{> footer}}

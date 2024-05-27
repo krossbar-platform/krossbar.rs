@@ -1,0 +1,54 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.blue {
+    background-color: rgb(9, 35, 58);
+}
+
+.title-mono {
+    font-family: "Ubuntu Sans Mono", monospace;
+    font-optical-sizing: auto;
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+.navbar-logo {
+    width: 45px;
+    fill: currentColor;
+}
+
+.flex-column {
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+}
+
+.demo-player {
+    width: 100%;
+}
+
+.ap-player {
+    height: 500px !important;
+}
+
+.ap-play-button span {
+    display: flex !important;
+    justify-content: center;
+}
+
+#made-by a {
+    color: rgb(137, 164, 175);
+}
+
+.links-blue a {
+    color: rgb(23, 91, 155);
+}
+
+.links-blue a:hover {
+    color: rgb(46, 127, 203);
+}
