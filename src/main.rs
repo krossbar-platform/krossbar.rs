@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use axum::{
     extract::State,
     http::StatusCode,
@@ -5,16 +7,21 @@ use axum::{
     routing::get,
     Router,
 };
+use clap::Parser;
 use handlebars::{DirectorySourceOptions, Handlebars};
 use tower_http::{
     services::{ServeDir, ServeFile},
     trace::TraceLayer,
 };
 
-#[cfg(debug_assertions)]
-use listenfd::ListenFd;
-#[cfg(debug_assertions)]
-use tokio::net::TcpListener;
+/// krossbar.rs web service
+#[derive(Parser, Debug)]
+#[command(version, about, long_about = None)]
+struct Args {
+    /// SSL certificates dir
+    #[arg(short, long)]
+    certificates_dir: Option<PathBuf>,
+}
 
 async fn index(State(renderer): State<Handlebars<'static>>) -> Response {
     render("index", &renderer)
@@ -59,7 +66,9 @@ fn make_state() -> Handlebars<'static> {
 #[cfg(debug_assertions)]
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
-    // initialize tracing
+    use listenfd::ListenFd;
+    use tokio::net::TcpListener;
+
     pretty_env_logger::init();
 
     let mut listenfd = ListenFd::from_env();
@@ -95,6 +104,12 @@ async fn main() {
 #[cfg(not(debug_assertions))]
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
+    use std::net::SocketAddr;
+
+    use axum_server::tls_rustls::RustlsConfig;
+
+    let args = Args::parse();
+
     let app = Router::new()
         .nest_service("/images", ServeDir::new("images"))
         .nest_service("/demos", ServeDir::new("demos"))
@@ -108,8 +123,24 @@ async fn main() {
         .fallback(handler_404)
         .with_state(make_state());
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:80").await.unwrap();
+    if let Some(certs_dir) = args.certificates_dir {
+        let addr = SocketAddr::from(([0, 0, 0, 0], 443));
 
-    println!("listening on {}", listener.local_addr().unwrap());
-    axum::serve(listener, app).await.unwrap();
+        let config =
+            RustlsConfig::from_pem_file(certs_dir.join("cert.pem"), certs_dir.join("privkey.pem"))
+                .await
+                .unwrap();
+
+        println!("Listening with SSL on :443");
+
+        axum_server::bind_rustls(addr, config)
+            .serve(app.into_make_service())
+            .await
+            .unwrap();
+    } else {
+        let listener = tokio::net::TcpListener::bind("0.0.0.0:80").await.unwrap();
+        println!("Listening on {}", listener.local_addr().unwrap());
+
+        axum::serve(listener, app).await.unwrap();
+    }
 }
