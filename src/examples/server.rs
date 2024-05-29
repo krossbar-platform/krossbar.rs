@@ -40,8 +40,9 @@ async fn main() {
 
             let client_count = client_counter.fetch_add(1, Ordering::Relaxed);
 
-            // Note: `signal` and `state` methods to broadcast values don't capture `self`, which
-            // allows moving the result futures into async block below
+            // Note: `signal` and `state` methods to broadcast values don't
+            // capture `self`, which allows moving the result futures
+            // into async block below
             let signal_sender = signal.clone().emit(client_count);
             let state_sender = if client_count % 10 == 0 {
                 Some(state.set((client_count, name.clone())))

@@ -28,7 +28,8 @@ async fn main() {
         .unwrap();
 
     // Spawn a task to poll incoming messages
-    // Note: you can move service handle into the task and continue using `Client` handle
+    // Note: you can move service handle into the task and continue using
+    // `Client` handle
     tokio::spawn(service.run());
 
     // Subscribe to call counter
@@ -48,13 +49,17 @@ async fn main() {
         let client_name = format!("Client-{counter}");
 
         // Make a regular call
-        let response: String = server_connection.call("greet", &client_name).await.unwrap();
+        let response: String = server_connection.call("greet", &client_name)
+            .await
+            .unwrap();
         info!("Call response \"{response}\"");
 
         // Random frequence here
         if counter % 3 == 0 {
             // Get last 10th client
-            let response: (u64, String) = server_connection.get("10th_client").await.unwrap();
+            let response: (u64, String) = server_connection.get("10th_client")
+                .await
+                .unwrap();
             info!("10th client call \"{response:?}\"");
         }
 
