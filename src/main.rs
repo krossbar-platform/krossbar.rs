@@ -1,3 +1,5 @@
+mod index;
+
 use std::path::PathBuf;
 
 use axum::{
@@ -9,6 +11,7 @@ use axum::{
 };
 use clap::Parser;
 use handlebars::{DirectorySourceOptions, Handlebars};
+use serde::Serialize;
 use tower_http::{
     services::{ServeDir, ServeFile},
     trace::TraceLayer,
@@ -23,27 +26,23 @@ struct Args {
     certificates_dir: Option<PathBuf>,
 }
 
-async fn index(State(renderer): State<Handlebars<'static>>) -> Response {
-    render("index", &renderer)
-}
-
 async fn faq(State(renderer): State<Handlebars<'static>>) -> Response {
-    render("faq", &renderer)
+    render("faq", &renderer, &())
 }
 
 async fn contacts(State(renderer): State<Handlebars<'static>>) -> Response {
-    render("contacts", &renderer)
+    render("contacts", &renderer, &())
 }
 
 async fn handler_404(State(renderer): State<Handlebars<'static>>) -> impl IntoResponse {
-    let mut response = render("404", &renderer);
+    let mut response = render("404", &renderer, &());
     *response.status_mut() = StatusCode::NOT_FOUND;
 
     response
 }
 
-fn render(template: &str, renderer: &Handlebars<'_>) -> Response {
-    match renderer.render(template, &()) {
+pub fn render<T: Serialize>(template: &str, renderer: &Handlebars<'_>, data: &T) -> Response {
+    match renderer.render(template, data) {
         Ok(html) => Html(html).into_response(),
         Err(err) => (
             StatusCode::INTERNAL_SERVER_ERROR,
@@ -90,7 +89,7 @@ async fn main() {
         .nest_service("/scripts", ServeDir::new("scripts"))
         .nest_service("/favicon.ico", ServeFile::new("static/favicon.ico"))
         .layer(TraceLayer::new_for_http())
-        .route("/", get(index))
+        .route("/", get(index::index))
         .route("/faq", get(faq))
         .route("/contacts", get(contacts))
         .fallback(handler_404)
@@ -117,7 +116,7 @@ async fn main() {
         .nest_service("/scripts", ServeDir::new("scripts"))
         .nest_service("/favicon.ico", ServeFile::new("static/favicon.ico"))
         .layer(TraceLayer::new_for_http())
-        .route("/", get(index))
+        .route("/", get(index::index))
         .route("/faq", get(faq))
         .route("/contacts", get(contacts))
         .fallback(handler_404)

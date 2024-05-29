@@ -3,9 +3,9 @@
 <!-- Hero Section -->
 <section class="bg-white py-12">
     <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold">Convenient Linux services</h1>
+        <h1 class="text-4xl font-bold">Modern tooling for classic solutions</h1>
         <p class="mt-4 text-xl">A set of Linux tool to develop service-based
-            solutions, utilizing Rust safety and
+            platforms, utilizing Rust safety and
             robustness.</p>
     </div>
 </section>
@@ -16,8 +16,7 @@
         <h2 class="text-3xl font-bold mb-8">Core Features</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="p-4 bg-white rounded-lg shadow flex-column">
-                <img src="images/feature_bus.png" alt="Bus Image"
-                    class="mx-auto mb-4">
+                <img src="images/feature_bus.png" alt="Bus Image" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Bus</h3>
                 <p class="mt-2">Connect services using fast permission-based
                     bus. Make remote
@@ -33,8 +32,7 @@
                 </a>
             </div>
             <div class="p-4 bg-white rounded-lg shadow flex-column">
-                <img src="images/feature_log.png" alt="Log Image"
-                    class="mx-auto mb-4">
+                <img src="images/feature_log.png" alt="Log Image" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Logging</h3>
                 <p class="mt-2">Keep you service logs one place. Monitor and
                     filter logs as you need. Manage logging
@@ -47,8 +45,7 @@
                 </a>
             </div>
             <div class="p-4 bg-white rounded-lg shadow flex-column">
-                <img src="images/feature_settings.png" alt="Settings Image"
-                    class="mx-auto mb-4">
+                <img src="images/feature_settings.png" alt="Settings Image" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">App settings</h3>
                 <p class="mt-2">Store and query service state. View service
                     state in real time. Update and read
@@ -70,33 +67,25 @@
         <h2 class="text-3xl font-bold mb-8"><a name="bus-examples">Bus
                 examples</a></h2>
 
+        {{#each bus_entries}}
         <div class="bg-gray-50 rounded-lg shadow mb-4">
             <div class="flex flex-row">
                 <div class="w-1/3 p-6">
-                    <h3 class="text-2xl font-bold mb-4">Bus monitor</h3>
-                    <p class="flex">Monitor message exchange using Krossbar
-                        monitor tool.</p>
+                    <h3 class="text-2xl font-bold mb-4">{{header}}</h3>
+                    <p class="flex">{{description}}</p>
                 </div>
+                {{#if body_type.demo}}
                 <div class="flex w-2/3 h-fit">
-                    <div class="demo-player" id="bus-demo-1"></div>
+                    <div class="demo-player" name="{{body_type.demo}}"></div>
                 </div>
+                {{else}}
+                <div class="flex w-2/3 h-fit text-left">
+                    <pre class="demo-code"><code class="language-rust">{{body_type.code}}</code></pre>
+                </div>
+                {{/if}}
             </div>
         </div>
-
-        <div class="bg-gray-50 rounded-lg shadow mb-4">
-            <div class="flex flex-row">
-                <div class="w-1/3 p-6">
-                    <h3 class="text-2xl font-bold mb-4">Bus connect</h3>
-                    <p class="flex">Connect to services to inspect
-                        registered endpoint, or make interactive
-                        calls.</p>
-                </div>
-                <div class="flex w-2/3 h-fit">
-                    <div class="demo-player" id="bus-demo-2"></div>
-                </div>
-            </div>
-        </div>
-
+        {{/each}}
     </div>
 </section>
 
