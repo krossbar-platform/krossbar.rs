@@ -69,7 +69,7 @@ fn make_bus_entries() -> Vec<BodyEntry> {
             registered endpoint, or make interactive
             calls."
                 .into(),
-            body_type: BodyEntryType::Demo("intro2".into()),
+            body_type: BodyEntryType::Demo("connect".into()),
         },
     ]
 }
