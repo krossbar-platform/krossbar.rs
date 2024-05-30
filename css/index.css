@@ -47,7 +47,7 @@ pre code.hljs {
 }
 
 .ap-player {
-    height: 500px !important;
+    width: 100%;
 }
 
 .ap-play-button span {
@@ -84,4 +84,22 @@ pre code.hljs {
 /* for block of code */
 .hljs-ln-code {
     padding-left: 10px !important;
+}
+
+body {
+    --term-color-background: #303030 !important;
+}
+
+.asciinema-player-theme-krossbar {
+    --term-color-foreground: #c5c8c6;
+    --term-color-background: #303030;
+
+    --term-color-0: #3b4252;
+    --term-color-1: #bf616a;
+    --term-color-2: #a3be8c;
+    --term-color-3: #ebcb8b;
+    --term-color-4: #81a1c1;
+    --term-color-5: #b48ead;
+    --term-color-6: #88c0d0;
+    --term-color-7: #eceff4;
 }

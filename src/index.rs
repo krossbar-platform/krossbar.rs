@@ -61,7 +61,7 @@ fn make_bus_entries() -> Vec<BodyEntry> {
             description: "Monitor message exchange using Krossbar
             monitor tool."
                 .into(),
-            body_type: BodyEntryType::Demo("intro".into()),
+            body_type: BodyEntryType::Demo("monitor".into()),
         },
         BodyEntry {
             header: "Bus connect".into(),
