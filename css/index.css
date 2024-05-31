@@ -3,7 +3,7 @@ body {
 }
 
 .blue {
-    background-color: rgb(9, 35, 58);
+    background-color: rgb(17, 24, 39);
 }
 
 .title-mono {
@@ -17,7 +17,7 @@ body {
     }
 
     #features {
-        min-height: 700px;
+        min-height: 400px;
     }
 }
 

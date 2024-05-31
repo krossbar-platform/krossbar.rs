@@ -3,27 +3,24 @@
 <!-- Hero Section -->
 <section class="bg-white py-12">
     <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold">Modern tooling for classic solutions</h1>
-        <p class="mt-4 text-xl">A set of Linux tool to develop service-based
-            platforms, utilizing Rust safety and
-            robustness.</p>
+        <h1 class="text-4xl font-bold">Modern tools for modern solutions</h1>
+        <p class="mt-4 text-xl">Linux tools to develop service-based platforms utilizing Rust safety and speed.</p>
     </div>
 </section>
 
 <!-- Features Section -->
-<section id="features" class="bg-gray-50 py-12">
+<section id="features" class="bg-gray-800 py-12">
     <div class="container mx-auto text-center p-4">
-        <h2 class="text-3xl font-bold mb-8">Core Features</h2>
+        <h2 class="text-3xl font-bold mb-8 text-gray-50">Krossbar tools</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-4 bg-white rounded-lg shadow flex-column">
-                <img src="images/feature_bus.png" alt="Bus Image" class="mx-auto mb-4">
-                <h3 class="text-xl font-bold">Bus</h3>
-                <p class="mt-2">Connect services using fast permission-based
-                    bus. Make remote
-                    procedure calls, subscribe to signals and maintain
-                    states. Use monitoring tools to watch message
-                    exchange in real time.
-                </p>
+            <div class="p-4 bg-gray-50 rounded-lg shadow flex-column">
+                <div>
+                    <h3 class="text-xl font-bold">Bus</h3>
+                    <p class="mt-2">Krossbar uses RPC to connect services using fast, permission-based bus.</p>
+                    <p class="mt-2">Make remote procedure calls, subscribe to signals and maintain states.</p>
+                    <p class="mt-2">Use monitoring tools to watch message exchange in real time.</p>
+                    <p class="mt-2">Let Krossbar to reconnect end resubscribe to a client, when restarted.</p>
+                </div>
                 <a href="#bus-examples">
                     <button type="button"
                         class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
@@ -31,12 +28,15 @@
                     </button>
                 </a>
             </div>
-            <div class="p-4 bg-white rounded-lg shadow flex-column">
-                <img src="images/feature_log.png" alt="Log Image" class="mx-auto mb-4">
-                <h3 class="text-xl font-bold">Logging</h3>
-                <p class="mt-2">Keep you service logs one place. Monitor and
-                    filter logs as you need. Manage logging
-                    settings in one place using management tools.</p>
+            <div class="p-4 bg-gray-50 rounded-lg shadow flex-column">
+                <div>
+                    <h3 class="text-xl font-bold">Logging</h3>
+                    <p class="mt-2">Krossbar logging utilizes Krossbar RPC to send logs to a logging service.</p>
+                    <p class="mt-2">Keep you logs in one place. Control where to store service logs using service
+                        settings.</p>
+                    <p class="mt-2">Monitor and filter logs as you need.</p>
+                    <p class="mt-2">Manage logging settings in one place using management tools.</p>
+                </div>
                 <a href="#log-examples">
                     <button type="button"
                         class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
@@ -44,12 +44,15 @@
                     </button>
                 </a>
             </div>
-            <div class="p-4 bg-white rounded-lg shadow flex-column">
-                <img src="images/feature_settings.png" alt="Settings Image" class="mx-auto mb-4">
-                <h3 class="text-xl font-bold">App settings</h3>
-                <p class="mt-2">Store and query service state. View service
-                    state in real time. Update and read
-                    state automatically across service runs.</p>
+            <div class="p-4 bg-gray-50 rounded-lg shadow flex-column">
+                <div>
+                    <h3 class="text-xl font-bold">App settings</h3>
+                    <p class="mt-2">Krossbar uses JSON based settings files to store application settings.</p>
+                    <p class="mt-2">Store and query service state.</p>
+                    <p class="mt-2">View service state in real time.</p>
+                    <p class="mt-2">Use Krossbar bus interfaces to expose service state if needed.</p>
+                    <p class="mt-2">Update and read state automatically across service runs.</p>
+                </div>
                 <a href="#settings-examples">
                     <button type="button"
                         class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
