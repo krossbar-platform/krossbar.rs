@@ -24,6 +24,7 @@ body {
 
 .navbar-logo {
     width: 45px;
+    min-width: 45px;
     fill: currentColor;
 }
 
