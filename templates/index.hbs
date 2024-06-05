@@ -4,7 +4,8 @@
 <section class="bg-white py-12">
     <div class="container mx-auto text-center">
         <h1 class="text-4xl font-bold">Modern tools for modern solutions</h1>
-        <p class="mt-4 text-xl">Linux tools to develop service-based platforms utilizing Rust safety and speed.</p>
+        <p class="mt-4 text-xl">Linux tools to develop service-based platforms
+            utilizing Rust safety and speed.</p>
     </div>
 </section>
 
@@ -13,49 +14,59 @@
     <div class="container mx-auto text-center p-4">
         <h2 class="text-3xl font-bold mb-8 text-gray-50">Krossbar tools</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-4 bg-gray-50 rounded-lg shadow flex-column">
+            <div class="p-4 bg-gray-50 rounded flex-column">
                 <div>
                     <h3 class="text-xl font-bold">Bus</h3>
-                    <p class="mt-2">Krossbar uses RPC to connect services using fast, permission-based bus.</p>
-                    <p class="mt-2">Make remote procedure calls, subscribe to signals and maintain states.</p>
-                    <p class="mt-2">Use monitoring tools to watch message exchange in real time.</p>
-                    <p class="mt-2">Let Krossbar to reconnect end resubscribe to a client, when restarted.</p>
+                    <p class="mt-2">Krossbar uses RPC to connect services using
+                        fast, permission-based bus.</p>
+                    <p class="mt-2">Make remote procedure calls, subscribe to
+                        signals and maintain states.</p>
+                    <p class="mt-2">Use monitoring tools to watch message
+                        exchange in real time.</p>
+                    <p class="mt-2">Let Krossbar to reconnect end resubscribe to
+                        a client, when restarted.</p>
                 </div>
                 <a href="#bus-examples">
                     <button type="button"
-                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
+                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
                         Examples
                     </button>
                 </a>
             </div>
-            <div class="p-4 bg-gray-50 rounded-lg shadow flex-column">
+            <div class="p-4 bg-gray-50 rounded flex-column">
                 <div>
                     <h3 class="text-xl font-bold">Logging</h3>
-                    <p class="mt-2">Krossbar logging utilizes Krossbar RPC to send logs to a logging service.</p>
-                    <p class="mt-2">Keep you logs in one place. Control where to store service logs using service
+                    <p class="mt-2">Krossbar logging utilizes Krossbar RPC to
+                        send logs to a logging service.</p>
+                    <p class="mt-2">Keep you logs in one place. Control where to
+                        store service logs using service
                         settings.</p>
                     <p class="mt-2">Monitor and filter logs as you need.</p>
-                    <p class="mt-2">Manage logging settings in one place using management tools.</p>
+                    <p class="mt-2">Manage logging settings in one place using
+                        management tools.</p>
                 </div>
                 <a href="#log-examples">
                     <button type="button"
-                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
+                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
                         Examples
                     </button>
                 </a>
             </div>
-            <div class="p-4 bg-gray-50 rounded-lg shadow flex-column">
+            <div class="p-4 bg-gray-50 rounded flex-column">
                 <div>
                     <h3 class="text-xl font-bold">App settings</h3>
-                    <p class="mt-2">Krossbar uses JSON based settings files to store application settings.</p>
+                    <p class="mt-2">Krossbar uses JSON based settings files to
+                        store application settings.</p>
                     <p class="mt-2">Store and query service state.</p>
                     <p class="mt-2">View service state in real time.</p>
-                    <p class="mt-2">Use Krossbar bus interfaces to expose service state if needed.</p>
-                    <p class="mt-2">Update and read state automatically across service runs.</p>
+                    <p class="mt-2">Use Krossbar bus interfaces to expose
+                        service state if needed.</p>
+                    <p class="mt-2">Update and read state automatically across
+                        service runs.</p>
                 </div>
                 <a href="#settings-examples">
                     <button type="button"
-                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
+                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
                         Examples
                     </button>
                 </a>
@@ -71,19 +82,21 @@
                 examples</a></h2>
 
         {{#each bus_entries}}
-        <div class="bg-gray-50 rounded-lg shadow mb-4">
-            <div class="flex flex-row">
-                <div class="w-1/3 p-6">
+        <div class="bg-gray-50 rounded mb-4 border-gray-200 border demo-block">
+            <div class="md:flex md:flex-row">
+                <div class="md:w-1/3 p-6">
                     <h3 class="text-2xl font-bold mb-4">{{header}}</h3>
                     <p class="flex">{{description}}</p>
                 </div>
                 {{#if body_type.demo}}
-                <div class="flex w-2/3 h-fit">
-                    <div class="demo-player text-3xl" name="{{body_type.demo}}"></div>
+                <div class="flex md:w-2/3 h-fit">
+                    <div class="demo-player text-3xl" name="{{body_type.demo}}">
+                    </div>
                 </div>
                 {{else}}
-                <div class="flex w-2/3 h-fit text-left">
-                    <pre class="demo-code"><code class="language-rust">{{body_type.code}}</code></pre>
+                <div class="flex md:w-2/3 h-fit text-left">
+                    <pre
+                        class="demo-code"><code class="language-rust">{{body_type.code}}</code></pre>
                 </div>
                 {{/if}}
             </div>

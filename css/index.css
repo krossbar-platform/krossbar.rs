@@ -33,6 +33,10 @@ body {
     display: flex;
 }
 
+.demo-block {
+    overflow: hidden
+}
+
 .demo-player {
     width: 100%;
 }
@@ -48,6 +52,7 @@ pre code.hljs {
 
 .ap-player {
     width: 100%;
+    border-radius: 0px !important;
 }
 
 .ap-play-button span {
