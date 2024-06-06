@@ -38,20 +38,35 @@
     <!-- Header -->
     <header class="blue text-white py-6 px-8">
         <div
-            class="container mx-auto flex justify-end md:justify-between md:items-center">
+            class="container mx-auto flex justify-end md:justify-between md:items-center flex-wrap">
             <div class="flex grow justify-start md:items-center">
                 <img src="images/logo.png" alt="Krossbar" class="h-12">
                 <a href="/" class="ml-6 text-4xl title-mono">Krossbar</a>
             </div>
-            <nav class="md:flex justify-left md:items-center hidden md:w-auto"
+            <div class="md:hidden ml-8">
+                <button data-collapse-toggle="navbar" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100"
+                    aria-controls="navbar" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="md:flex justify-left md:items-center hidden md:w-auto w-full mt-6 md:mt-0"
                 id="navbar">
                 <a href="/book"
-                    class="ml-6 flex justify-left items-center"><span
+                    class="md:ml-6 flex justify-left items-center"><span
                         class="ml-1 text-xl">Book</span></a>
-                <a href="/faq" class="ml-6 flex justify-left items-center"><span
+                <a href="/faq"
+                    class="md:ml-6 flex justify-left items-center"><span
                         class="ml-1 text-xl">FAQ</span></a>
                 <a href="/contacts"
-                    class="ml-6 flex justify-left items-center"><span
+                    class="md:ml-6 flex justify-left items-center"><span
                         class="ml-1 text-xl">Contacts</span></a>
                 <div
                     class="hidden md:flex ml-6 inline-block min-h-[1em] w-0.5 self-stretch bg-gray-300/10">
@@ -59,7 +74,7 @@
                 <hr class="md:hidden my-4 h-0.5 border-t-0 bg-gray-300/10" />
                 <div class="flex">
                     <a href="https://github.com/krossbar-platform"
-                        class="ml-4 flex justify-left items-center"><svg
+                        class="md:ml-4 flex justify-left items-center"><svg
                             width="45" height="45" viewBox="0 0 1792 1792"
                             xmlns="http://www.w3.org/2000/svg">
                             <path class="navbar-logo tk-svg-path"
@@ -82,19 +97,5 @@
                             </svg></span></a>
                 </div>
             </nav>
-            <div class="md:hidden ml-8">
-                <button data-collapse-toggle="navbar" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100"
-                    aria-controls="navbar" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-            </div>
         </div>
     </header>
