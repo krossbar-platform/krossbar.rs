@@ -7,29 +7,22 @@
     <title>Krossbar.rs</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script
-        src=" https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js "></script>
-    <link
-        href=" https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.css "
-        rel="stylesheet">
-    <script
-        src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-    <script
-        src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/rust.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js "></script>
+    <link href=" https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.css " rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/rust.min.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/lioshi.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
-    <link
-        href="https://cdn.jsdelivr.net/npm/asciinema-player@3.7.1/dist/bundle/asciinema-player.min.css"
+    <link href="https://cdn.jsdelivr.net/npm/asciinema-player@3.7.1/dist/bundle/asciinema-player.min.css"
         rel="stylesheet">
-    <script
-        src="https://cdn.jsdelivr.net/npm/asciinema-player@3.7.1/dist/bundle/asciinema-player.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.7.1/dist/bundle/asciinema-player.min.js"></script>
     <script src="/scripts/index.js"></script>
     <link rel="stylesheet" href="/css/index.css">
 </head>
@@ -37,8 +30,7 @@
 <body class="bg-gray-50 text-gray-800">
     <!-- Header -->
     <header class="blue text-white py-6 px-8">
-        <div
-            class="container mx-auto flex justify-end md:justify-between md:items-center flex-wrap">
+        <div class="container mx-auto flex justify-end md:justify-between md:items-center flex-wrap">
             <div class="flex grow justify-start md:items-center">
                 <img src="images/logo.png" alt="Krossbar" class="h-12">
                 <a href="/" class="ml-6 text-4xl title-mono">Krossbar</a>
@@ -48,47 +40,33 @@
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100"
                     aria-controls="navbar" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none"
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2"
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M1 1h15M1 7h15M1 13h15" />
                     </svg>
                 </button>
             </div>
-            <nav class="md:flex justify-left md:items-center hidden md:w-auto w-full mt-6 md:mt-0"
-                id="navbar">
-                <a href="/book"
-                    class="md:ml-6 flex justify-left items-center"><span
+            <nav class="md:flex justify-left md:items-center hidden md:w-auto w-full mt-6 md:mt-0" id="navbar">
+                <a href="/book" class="md:ml-6 flex justify-left items-center"><span
                         class="ml-1 text-xl">Book</span></a>
-                <a href="/faq"
-                    class="md:ml-6 flex justify-left items-center"><span
-                        class="ml-1 text-xl">FAQ</span></a>
-                <a href="/contacts"
-                    class="md:ml-6 flex justify-left items-center"><span
+                <a href="/faq" class="md:ml-6 flex justify-left items-center"><span class="ml-1 text-xl">FAQ</span></a>
+                <a href="/contacts" class="md:ml-6 flex justify-left items-center"><span
                         class="ml-1 text-xl">Contacts</span></a>
-                <div
-                    class="hidden md:flex ml-6 inline-block min-h-[1em] w-0.5 self-stretch bg-gray-300/10">
+                <div class="hidden md:flex ml-6 inline-block min-h-[1em] w-0.5 self-stretch bg-gray-300/10">
                 </div>
                 <hr class="md:hidden my-4 h-0.5 border-t-0 bg-gray-300/10" />
                 <div class="flex">
-                    <a href="https://github.com/krossbar-platform"
-                        class="md:ml-4 flex justify-left items-center"><svg
-                            width="45" height="45" viewBox="0 0 1792 1792"
-                            xmlns="http://www.w3.org/2000/svg">
+                    <a href="https://github.com/krossbar-platform" class="md:ml-4 flex justify-left items-center"><svg
+                            width="45" height="45" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                             <path class="navbar-logo tk-svg-path"
                                 d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"
                                 fill="#fff"></path>
                         </svg></a>
-                    <a href="https://crates.io/search?q=krossbar"
-                        class="ml-4 flex justify-left items-center"><img
-                            class="navbar-logo"
-                            src="https://crates.io/assets/cargo.png" role="none"
-                            alt=""></a>
+                    <a href="https://crates.io/search?q=krossbar" class="ml-4 flex justify-left items-center"><img
+                            class="navbar-logo" src="https://crates.io/assets/cargo.png" role="none" alt=""></a>
                     <a href="https://docs.rs/releases/search?query=krossbar"
-                        class="ml-4 flex justify-left items-center"><span
-                            class="navbar-logo" aria-hidden="true"><svg
+                        class="ml-4 flex justify-left items-center"><span class="navbar-logo" aria-hidden="true"><svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                 <path

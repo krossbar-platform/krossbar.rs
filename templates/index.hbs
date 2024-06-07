@@ -3,9 +3,9 @@
 <!-- Hero Section -->
 <section class="bg-white py-12">
     <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold">Convenient service platforms</h1>
-        <p class="m-4 text-xl">Linux tools for service-based platforms
-            using Rust safety and speed.</p>
+        <h1 class="text-4xl font-bold">Convenient Linux services</h1>
+        <p class="mt-4 text-xl">A suite of Linux tools and libraries developed in Rust, designed for creating robust,
+            efficient, and secure service-based solutions</p>
     </div>
 </section>
 
@@ -17,14 +17,16 @@
             <div class="p-4 bg-gray-50 rounded flex-column">
                 <div>
                     <h3 class="text-xl font-bold">Bus</h3>
-                    <p class="mt-2">Krossbar uses RPC to connect services using
-                        fast, permission-based bus.</p>
-                    <p class="mt-2">Make remote procedure calls, subscribe to
-                        signals and maintain states.</p>
-                    <p class="mt-2">Use monitoring tools to watch message
-                        exchange in real time.</p>
-                    <p class="mt-2">Let Krossbar to reconnect end resubscribe to
-                        a client, when restarted.</p>
+                    <div class="text-left">
+                        <p class="mt-2">Krossbar uses RPC to connect services using
+                            fast, permission-based bus.</p>
+                        <p class="mt-2">Make remote procedure calls, subscribe to
+                            signals and maintain states.</p>
+                        <p class="mt-2">Use monitoring tools to watch message
+                            exchange in real time.</p>
+                        <p class="mt-2">Let Krossbar to reconnect end resubscribe to
+                            a client, when restarted.</p>
+                    </div>
                 </div>
                 <a href="#bus-examples">
                     <button type="button"
@@ -36,14 +38,16 @@
             <div class="p-4 bg-gray-50 rounded flex-column">
                 <div>
                     <h3 class="text-xl font-bold">Logging</h3>
-                    <p class="mt-2">Krossbar logging utilizes Krossbar RPC to
-                        send logs to a logging service.</p>
-                    <p class="mt-2">Keep you logs in one place. Control where to
-                        store service logs using service
-                        settings.</p>
-                    <p class="mt-2">Monitor and filter logs as you need.</p>
-                    <p class="mt-2">Manage logging settings in one place using
-                        management tools.</p>
+                    <div class="text-left">
+                        <p class="mt-2">Krossbar logging utilizes Krossbar RPC to
+                            send logs to a logging service.</p>
+                        <p class="mt-2">Keep you logs in one place. Control where to
+                            store service logs using service
+                            settings.</p>
+                        <p class="mt-2">Monitor and filter logs as you need.</p>
+                        <p class="mt-2">Manage logging settings in one place using
+                            management tools.</p>
+                    </div>
                 </div>
                 <a href="#log-examples">
                     <button type="button"
@@ -55,14 +59,16 @@
             <div class="p-4 bg-gray-50 rounded flex-column">
                 <div>
                     <h3 class="text-xl font-bold">App settings</h3>
-                    <p class="mt-2">Krossbar uses JSON based settings files to
-                        store application settings.</p>
-                    <p class="mt-2">Store and query service state.</p>
-                    <p class="mt-2">View service state in real time.</p>
-                    <p class="mt-2">Use Krossbar bus interfaces to expose
-                        service state if needed.</p>
-                    <p class="mt-2">Update and read state automatically across
-                        service runs.</p>
+                    <div class="text-left">
+                        <p class="mt-2">Krossbar uses JSON based settings files to
+                            store application settings.</p>
+                        <p class="mt-2">Store and query service state.</p>
+                        <p class="mt-2">View service state in real time.</p>
+                        <p class="mt-2">Use Krossbar bus interfaces to expose
+                            service state if needed.</p>
+                        <p class="mt-2">Update and read state automatically across
+                            service runs.</p>
+                    </div>
                 </div>
                 <a href="#settings-examples">
                     <button type="button"
@@ -78,11 +84,28 @@
 <!-- Demos Section -->
 <section id="demos" class="bg-white py-12">
     <div class="container mx-auto text-center items-center p-4">
-        <h2 class="text-3xl font-bold mb-8"><a name="bus-examples">Bus
-                examples</a></h2>
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Why Choose Krossbar?</h2>
+            <ul class="list-disc list-inside space-y-2 text-left">
+                <li><strong>High-performance Libraries:</strong> Krossbar is build on to op high-performance async
+                    libraries, which can handle hundreds of thouthands of RPC calls per second.</li>
+                <li><strong>Comprehensive Toolkit:</strong> Krossbar includes utilities to monitor, debug, and manage
+                    services. This
+                    reduces the time and effort required to develop complex service-based applications.</li>
+                <li><strong>Safety and Security:</strong> Rust's guarantees around memory safety and data race
+                    prevention make Krossbar an ideal choice for developing secure services.</li>
+                <li><strong>Modern Tooling:</strong> Use Rust's ecosystem and tooling, to improve
+                    development experience with easy dependency management, testing, and building.</li>
+            </ul>
+        </section>
+        <hr class="w-64 h-px my-8 bg-gray-200 border-0 w-full">
+
+
+        <h2 class="text-2xl font-bold mb-8"><a name="bus-examples">Krossbar Bus
+            </a></h2>
 
         {{#each bus_entries}}
-        <div class="bg-gray-50 rounded mb-4 border-gray-200 border demo-block">
+        <div class="bg-gray-50/50 rounded mb-4 border-gray-200 border demo-block">
             <div class="md:flex md:flex-row">
                 <div class="md:w-1/3 p-6">
                     <h3 class="text-2xl font-bold mb-4">{{header}}</h3>
@@ -95,8 +118,7 @@
                 </div>
                 {{else}}
                 <div class="flex md:w-2/3 h-fit text-left">
-                    <pre
-                        class="demo-code"><code class="language-rust">{{body_type.code}}</code></pre>
+                    <pre class="demo-code"><code class="language-rust">{{body_type.code}}</code></pre>
                 </div>
                 {{/if}}
             </div>
