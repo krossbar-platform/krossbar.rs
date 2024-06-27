@@ -124,6 +124,54 @@
             </div>
         </div>
         {{/each}}
+
+        <h2 class="text-2xl font-bold my-8"><a name="bus-examples">Krossbar Log
+            </a></h2>
+
+        {{#each log_entries}}
+        <div class="bg-gray-50/50 rounded mb-4 border-gray-200 border demo-block">
+            <div class="md:flex md:flex-row">
+                <div class="md:w-1/3 p-6">
+                    <h3 class="text-2xl font-bold mb-4">{{header}}</h3>
+                    <p class="flex">{{description}}</p>
+                </div>
+                {{#if body_type.demo}}
+                <div class="flex md:w-2/3 h-fit">
+                    <div class="demo-player text-3xl" name="{{body_type.demo}}">
+                    </div>
+                </div>
+                {{else}}
+                <div class="flex md:w-2/3 h-fit text-left">
+                    <pre class="demo-code"><code class="language-rust">{{body_type.code}}</code></pre>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+
+        <h2 class="text-2xl font-bold my-8"><a name="bus-examples">Krossbar Settings
+            </a></h2>
+
+        {{#each settings_entries}}
+        <div class="bg-gray-50/50 rounded mb-4 border-gray-200 border demo-block">
+            <div class="md:flex md:flex-row">
+                <div class="md:w-1/3 p-6">
+                    <h3 class="text-2xl font-bold mb-4">{{header}}</h3>
+                    <p class="flex">{{description}}</p>
+                </div>
+                {{#if body_type.demo}}
+                <div class="flex md:w-2/3 h-fit">
+                    <div class="demo-player text-3xl" name="{{body_type.demo}}">
+                    </div>
+                </div>
+                {{else}}
+                <div class="flex md:w-2/3 h-fit text-left">
+                    <pre class="demo-code"><code class="language-rust">{{body_type.code}}</code></pre>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
     </div>
 </section>
 
