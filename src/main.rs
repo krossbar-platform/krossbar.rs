@@ -1,13 +1,14 @@
 mod index;
 
-use std::path::PathBuf;
+use std::{net::SocketAddr, path::PathBuf};
 
 use axum::{
-    extract::State,
-    http::StatusCode,
-    response::{Html, IntoResponse, Response},
+    extract::{Host, State},
+    handler::HandlerWithoutStateExt,
+    http::{StatusCode, Uri},
+    response::{Html, IntoResponse, Redirect, Response},
     routing::get,
-    Router,
+    BoxError, Router,
 };
 use clap::Parser;
 use handlebars::{DirectorySourceOptions, Handlebars};
@@ -62,6 +63,22 @@ fn make_state() -> Handlebars<'static> {
     template_engine
 }
 
+fn make_router<S>() -> Router<S> {
+    Router::new()
+        .nest_service("/images", ServeDir::new("images"))
+        .nest_service("/demos", ServeDir::new("demos"))
+        .nest_service("/css", ServeDir::new("css"))
+        .nest_service("/scripts", ServeDir::new("scripts"))
+        .nest_service("/book", ServeDir::new("book"))
+        .nest_service("/favicon.ico", ServeFile::new("static/favicon.ico"))
+        .layer(TraceLayer::new_for_http())
+        .route("/", get(index::index))
+        .route("/faq", get(faq))
+        .route("/contacts", get(contacts))
+        .fallback(handler_404)
+        .with_state(make_state())
+}
+
 #[cfg(debug_assertions)]
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
@@ -82,18 +99,7 @@ async fn main() {
     };
 
     // build our application with a route
-    let app = Router::new()
-        .nest_service("/images", ServeDir::new("images"))
-        .nest_service("/demos", ServeDir::new("demos"))
-        .nest_service("/css", ServeDir::new("css"))
-        .nest_service("/scripts", ServeDir::new("scripts"))
-        .nest_service("/favicon.ico", ServeFile::new("static/favicon.ico"))
-        .layer(TraceLayer::new_for_http())
-        .route("/", get(index::index))
-        .route("/faq", get(faq))
-        .route("/contacts", get(contacts))
-        .fallback(handler_404)
-        .with_state(make_state());
+    let app = make_router();
 
     // run it
     println!("listening on {}", listener.local_addr().unwrap());
@@ -107,20 +113,10 @@ async fn main() {
 
     use axum_server::tls_rustls::RustlsConfig;
 
-    let args = Args::parse();
+    tokio::spawn(redirect_http_to_https());
 
-    let app = Router::new()
-        .nest_service("/images", ServeDir::new("images"))
-        .nest_service("/demos", ServeDir::new("demos"))
-        .nest_service("/css", ServeDir::new("css"))
-        .nest_service("/scripts", ServeDir::new("scripts"))
-        .nest_service("/favicon.ico", ServeFile::new("static/favicon.ico"))
-        .layer(TraceLayer::new_for_http())
-        .route("/", get(index::index))
-        .route("/faq", get(faq))
-        .route("/contacts", get(contacts))
-        .fallback(handler_404)
-        .with_state(make_state());
+    let args = Args::parse();
+    let app = make_router();
 
     if let Some(certs_dir) = args.certificates_dir {
         let addr = SocketAddr::from(([0, 0, 0, 0], 443));
@@ -142,4 +138,40 @@ async fn main() {
 
         axum::serve(listener, app).await.unwrap();
     }
+}
+
+#[allow(unused)]
+async fn redirect_http_to_https() {
+    fn make_https(host: String, uri: Uri) -> Result<Uri, BoxError> {
+        let mut parts = uri.into_parts();
+
+        parts.scheme = Some(axum::http::uri::Scheme::HTTPS);
+
+        if parts.path_and_query.is_none() {
+            parts.path_and_query = Some("/".parse().unwrap());
+        }
+
+        let https_host = host.replace("80", "443");
+        parts.authority = Some(https_host.parse()?);
+
+        Ok(Uri::from_parts(parts)?)
+    }
+
+    let redirect = move |Host(host): Host, uri: Uri| async move {
+        match make_https(host, uri) {
+            Ok(uri) => Ok(Redirect::permanent(&uri.to_string())),
+            Err(error) => {
+                eprintln!("Failed to convert URI to HTTPS: {error:?}");
+                Err(StatusCode::BAD_REQUEST)
+            }
+        }
+    };
+
+    let addr = SocketAddr::from(([0, 0, 0, 0], 80));
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
+    println!("Listening on {}", listener.local_addr().unwrap());
+
+    axum::serve(listener, redirect.into_make_service())
+        .await
+        .unwrap();
 }
