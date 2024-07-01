@@ -6,3 +6,6 @@ BOOKPATH="${SCRIPTPATH}/../krossbar-book"
 
 mkdir -p "${DESTPATH}"
 mdbook build --dest-dir "${DESTPATH}" "${BOOKPATH}"
+
+echo "Copying images"
+cp -r "${BOOKPATH}/images" "${DESTPATH}" 
