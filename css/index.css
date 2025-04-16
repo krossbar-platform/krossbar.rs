@@ -175,14 +175,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow 0.2s;
     height: 100%;
     /* Ensure all cards have same height */
 }
 
 .feature-card:hover {
     box-shadow: 0 8px 32px 0 rgba(30, 42, 99, 0.16);
-    transform: translateY(-4px) scale(1.01);
+    /* Removed transform effect */
 }
 
 .feature-icon {
@@ -475,19 +475,18 @@ header.sticky nav .nav-icon:focus {
 .feature-card {
     background: #fff;
     border-radius: 1rem;
-    box-shadow: 0 2px 16px 0 rgba(30, 42, 99, 0.08);
+    box-shadow: 0 2px 5px 0 rgba(30, 42, 99, 0.08);
     padding: 2.5rem 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow 0.2s;
     height: 100%;
     /* Ensure all cards have same height */
 }
 
 .feature-card:hover {
-    box-shadow: 0 8px 32px 0 rgba(30, 42, 99, 0.16);
-    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 3px 10px 0 rgba(30, 42, 99, 0.16);
 }
 
 .feature-icon {
