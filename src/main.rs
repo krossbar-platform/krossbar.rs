@@ -3,13 +3,14 @@ mod index;
 use std::{net::SocketAddr, path::PathBuf};
 
 use axum::{
-    extract::{Host, State},
+    extract::State,
     handler::HandlerWithoutStateExt,
     http::{StatusCode, Uri},
     response::{Html, IntoResponse, Redirect, Response},
     routing::get,
     BoxError, Router,
 };
+use axum_extra::extract::Host;
 use clap::Parser;
 use handlebars::{DirectorySourceOptions, Handlebars};
 use serde::Serialize;

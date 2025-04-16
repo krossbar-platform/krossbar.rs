@@ -1,177 +1,266 @@
 {{> header}}
 
 <!-- Hero Section -->
-<section class="bg-white py-12">
-    <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold">Convenient Linux services</h1>
-        <p class="m-4 text-xl">A suite of Linux tools and libraries developed in Rust, designed for creating robust,
-            efficient, and secure service-based solutions</p>
+<section class="hero-section text-white py-20">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-5xl font-bold leading-tight mb-4">Convenient Linux services</h1>
+                <p class="text-xl mb-8 opacity-90">A suite of Linux tools and libraries developed in Rust, designed for
+                    creating robust, efficient, and secure service-based solutions</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#features" class="btn-primary">Explore Features</a>
+                    <a href="https://github.com/krossbar-platform" class="btn-secondary">View on GitHub</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+                <img src="images/logo.png" alt="Krossbar" class="w-48 md:w-64 hero-logo">
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Features Section -->
-<section id="features" class="bg-gray-800 py-12">
-    <div class="container mx-auto text-center p-4">
-        <h2 class="text-3xl font-bold mb-8 text-gray-50">Krossbar tools</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-4 bg-gray-50 rounded flex-column">
-                <div>
-                    <h3 class="text-xl font-bold">Bus</h3>
-                    <div class="text-left">
-                        <p class="mt-2">Krossbar uses RPC to connect services using
-                            fast, permission-based bus.</p>
-                        <p class="mt-2">Make remote procedure calls, subscribe to
-                            signals and maintain states.</p>
-                        <p class="mt-2">Use monitoring tools to watch message
-                            exchange in real time.</p>
-                        <p class="mt-2">Let Krossbar to reconnect end resubscribe to
-                            a client, when restarted.</p>
-                    </div>
+<section id="features" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Krossbar tools</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to build robust, efficient services
+            </p>
+        </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div class="feature-card">
+        <div class="feature-icon bg-indigo-100 text-indigo-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
                 </div>
-                <a href="#bus-examples">
-                    <button type="button"
-                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
-                        Examples
-                    </button>
+                <h3 class="text-xl font-bold mb-3">Bus</h3>
+                <div class="text-gray-600">
+                    <p class="mb-2">Krossbar uses RPC to connect services using fast, permission-based bus.</p>
+                    <p class="mb-2">Make remote procedure calls, subscribe to signals and maintain states.</p>
+                    <p class="mb-2">Use monitoring tools to watch message exchange in real time.</p>
+                    <p class="mb-2">Let Krossbar to reconnect end resubscribe to a client, when restarted.</p>
+                </div>
+                <a href="#bus-examples" class="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800">
+                    See Examples
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
                 </a>
             </div>
-            <div class="p-4 bg-gray-50 rounded flex-column">
-                <div>
-                    <h3 class="text-xl font-bold">Logging</h3>
-                    <div class="text-left">
-                        <p class="mt-2">Krossbar logging utilizes Krossbar RPC to
-                            send logs to a logging service.</p>
-                        <p class="mt-2">Keep you logs in one place. Control where to
-                            store service logs using service
-                            settings.</p>
-                        <p class="mt-2">Monitor and filter logs as you need.</p>
-                        <p class="mt-2">Manage logging settings in one place using
-                            management tools.</p>
-                    </div>
+<div class="feature-card">
+    <div class="feature-icon bg-emerald-100 text-emerald-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+    </div>
+                <h3 class="text-xl font-bold mb-3">Logging</h3>
+                <div class="text-gray-600">
+                    <p class="mb-2">Krossbar logging utilizes Krossbar RPC to send logs to a logging service.</p>
+                    <p class="mb-2">Keep you logs in one place. Control where to store service logs using service settings.</p>
+                    <p class="mb-2">Monitor and filter logs as you need.</p>
+                    <p class="mb-2">Manage logging settings in one place using management tools.</p>
                 </div>
-                <a href="#log-examples">
-                    <button type="button"
-                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
-                        Examples
-                    </button>
+                <a href="#log-examples" class="mt-4 inline-flex items-center text-emerald-600 hover:text-emerald-800">
+                    See Examples
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
                 </a>
             </div>
-            <div class="p-4 bg-gray-50 rounded flex-column">
-                <div>
-                    <h3 class="text-xl font-bold">App settings</h3>
-                    <div class="text-left">
-                        <p class="mt-2">Krossbar uses JSON based settings files to
-                            store application settings.</p>
-                        <p class="mt-2">Store and query service state.</p>
-                        <p class="mt-2">View service state in real time.</p>
-                        <p class="mt-2">Use Krossbar bus interfaces to expose
-                            service state if needed.</p>
-                        <p class="mt-2">Update and read state automatically across
-                            service runs.</p>
-                    </div>
+<div class="feature-card">
+    <div class="feature-icon bg-amber-100 text-amber-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+    </div>
+                <h3 class="text-xl font-bold mb-3">App settings</h3>
+                <div class="text-gray-600">
+                    <p class="mb-2">Krossbar uses JSON based settings files to store application settings.</p>
+                    <p class="mb-2">Store and query service state.</p>
+                    <p class="mb-2">View service state in real time.</p>
+                    <p class="mb-2">Use Krossbar bus interfaces to expose service state if needed.</p>
+                    <p class="mb-2">Update and read state automatically across service runs.</p>
                 </div>
-                <a href="#settings-examples">
-                    <button type="button"
-                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4">
-                        Examples
-                    </button>
+                <a href="#settings-examples" class="mt-4 inline-flex items-center text-amber-600 hover:text-amber-800">
+                    See Examples
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
                 </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Why Choose Krossbar?</h2>
+                <p class="text-gray-600">Designed with performance and developer experience in mind</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="feature-item">
+                    <div class="feature-icon-small bg-purple-100 text-purple-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">High-performance Libraries</h3>
+                    <p class="text-gray-600">Krossbar is built on top of high-performance async libraries, which can
+                        handle hundreds of thousands of RPC calls per second.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-small bg-blue-100 text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Comprehensive Toolkit</h3>
+                    <p class="text-gray-600">Krossbar includes utilities to monitor, debug, and manage services. This
+                        reduces the time and effort required to develop complex service-based applications.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-small bg-green-100 text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Safety and Security</h3>
+                    <p class="text-gray-600">Rust's guarantees around memory safety and data race prevention make
+                        Krossbar an ideal choice for developing secure services.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-small bg-red-100 text-red-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Modern Tooling</h3>
+                    <p class="text-gray-600">Use Rust's ecosystem and tooling, to improve development experience with
+                        easy dependency management, testing, and building.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Demos Section -->
-<section id="demos" class="bg-white py-12">
-    <div class="container mx-auto text-center items-center p-4">
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-4">Why Choose Krossbar?</h2>
-            <ul class="list-disc list-inside space-y-2 text-left">
-                <li><strong>High-performance Libraries:</strong> Krossbar is build on to op high-performance async
-                    libraries, which can handle hundreds of thouthands of RPC calls per second.</li>
-                <li><strong>Comprehensive Toolkit:</strong> Krossbar includes utilities to monitor, debug, and manage
-                    services. This
-                    reduces the time and effort required to develop complex service-based applications.</li>
-                <li><strong>Safety and Security:</strong> Rust's guarantees around memory safety and data race
-                    prevention make Krossbar an ideal choice for developing secure services.</li>
-                <li><strong>Modern Tooling:</strong> Use Rust's ecosystem and tooling, to improve
-                    development experience with easy dependency management, testing, and building.</li>
-            </ul>
+<section id="demos" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Code Examples</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">See Krossbar in action with these practical examples</p>
+        </div>
+
+        <div class="demo-sections">
+            <h2 id="bus-examples" class="text-2xl font-bold mb-8 pt-8">Krossbar Bus</h2>
+
+            {{#each bus_entries}}
+            <div class="demo-block mb-10">
+                <div class="md:flex">
+                    <div class="md:w-1/3 p-6 bg-white rounded-l-lg shadow">
+                        <h3 class="text-xl font-bold mb-4">{{header}}</h3>
+                        <p class="text-gray-600">{{description}}</p>
+                    </div>
+<div class="md:w-2/3 bg-gray-900 rounded-r-lg shadow overflow-hidden">
+                        {{#if body_type.demo}}
+                        <div class="demo-player h-full" name="{{body_type.demo}}"></div>
+                        {{else}}
+                        <div class="h-full">
+                            <pre class="demo-code h-full"><code class="language-rust">{{body_type.code}}</code></pre>
+                        </div>
+                        {{/if}}
+                        </div>
+                        </div>
+            </div>
+            {{/each}}
+
+            <h2 id="log-examples" class="text-2xl font-bold mb-8 pt-8">Krossbar Log</h2>
+
+            {{#each log_entries}}
+            <div class="demo-block mb-10">
+                <div class="md:flex">
+                    <div class="md:w-1/3 p-6 bg-white rounded-l-lg shadow">
+                        <h3 class="text-xl font-bold mb-4">{{header}}</h3>
+                        <p class="text-gray-600">{{description}}</p>
+                    </div>
+<div class="md:w-2/3 bg-gray-900 rounded-r-lg shadow overflow-hidden">
+                        {{#if body_type.demo}}
+                        <div class="demo-player h-full" name="{{body_type.demo}}"></div>
+                        {{else}}
+                        <div class="h-full">
+                            <pre class="demo-code h-full"><code class="language-rust">{{body_type.code}}</code></pre>
+                        </div>
+                        {{/if}}
+                        </div>
+                        </div>
+            </div>
+            {{/each}}
+
+            <h2 id="settings-examples" class="text-2xl font-bold mb-8 pt-8">Krossbar Settings</h2>
+
+            {{#each settings_entries}}
+            <div class="demo-block mb-10">
+                <div class="md:flex">
+                    <div class="md:w-1/3 p-6 bg-white rounded-l-lg shadow">
+                        <h3 class="text-xl font-bold mb-4">{{header}}</h3>
+                        <p class="text-gray-600">{{description}}</p>
+                    </div>
+<div class="md:w-2/3 bg-gray-900 rounded-r-lg shadow overflow-hidden">
+                        {{#if body_type.demo}}
+                        <div class="demo-player h-full" name="{{body_type.demo}}"></div>
+                        {{else}}
+                        <div class="h-full">
+                            <pre class="demo-code h-full"><code class="language-rust">{{body_type.code}}</code></pre>
+                        </div>
+                        {{/if}}
+                        </div>
+                        </div>
+            </div>
+            {{/each}}
+        </div>
+        </div>
         </section>
-        <hr class="w-64 h-px my-8 bg-gray-200 border-0 w-full">
-
-
-        <h2 class="text-2xl font-bold mb-8"><a name="bus-examples">Krossbar Bus
-            </a></h2>
-
-        {{#each bus_entries}}
-        <div class="bg-gray-50/50 rounded mb-4 border-gray-200 border demo-block">
-            <div class="md:flex md:flex-row">
-                <div class="md:w-1/3 p-6">
-                    <h3 class="text-2xl font-bold mb-4">{{header}}</h3>
-                    <p class="flex">{{description}}</p>
+        
+        <!-- CTA Section -->
+        <section class="py-16 cta-section text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Ready to get started?</h2>
+                <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">Join our community and build amazing service-based
+                    applications with Krossbar</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://github.com/krossbar-platform" class="btn-white" target="_blank"
+                        rel="noopener noreferrer">View on GitHub</a>
+                    <a href="https://crates.io/search?q=krossbar" class="btn-white-outline" target="_blank"
+                        rel="noopener noreferrer">Explore Crates</a>
                 </div>
-                {{#if body_type.demo}}
-                <div class="flex md:w-2/3 h-fit">
-                    <div class="demo-player text-3xl" name="{{body_type.demo}}">
-                    </div>
-                </div>
-                {{else}}
-                <div class="flex md:w-2/3 h-fit text-left">
-                    <pre class="demo-code"><code class="language-rust">{{body_type.code}}</code></pre>
-                </div>
-                {{/if}}
-            </div>
-        </div>
-        {{/each}}
-
-        <h2 class="text-2xl font-bold my-8"><a name="bus-examples">Krossbar Log
-            </a></h2>
-
-        {{#each log_entries}}
-        <div class="bg-gray-50/50 rounded mb-4 border-gray-200 border demo-block">
-            <div class="md:flex md:flex-row">
-                <div class="md:w-1/3 p-6">
-                    <h3 class="text-2xl font-bold mb-4">{{header}}</h3>
-                    <p class="flex">{{description}}</p>
-                </div>
-                {{#if body_type.demo}}
-                <div class="flex md:w-2/3 h-fit">
-                    <div class="demo-player text-3xl" name="{{body_type.demo}}">
-                    </div>
-                </div>
-                {{else}}
-                <div class="flex md:w-2/3 h-fit text-left">
-                    <pre class="demo-code"><code class="language-rust">{{body_type.code}}</code></pre>
-                </div>
-                {{/if}}
-            </div>
-        </div>
-        {{/each}}
-
-        <h2 class="text-2xl font-bold my-8"><a name="bus-examples">Krossbar Settings
-            </a></h2>
-
-        {{#each settings_entries}}
-        <div class="bg-gray-50/50 rounded mb-4 border-gray-200 border demo-block">
-            <div class="md:flex md:flex-row">
-                <div class="md:w-1/3 p-6">
-                    <h3 class="text-2xl font-bold mb-4">{{header}}</h3>
-                    <p class="flex">{{description}}</p>
-                </div>
-                {{#if body_type.demo}}
-                <div class="flex md:w-2/3 h-fit">
-                    <div class="demo-player text-3xl" name="{{body_type.demo}}">
-                    </div>
-                </div>
-                {{else}}
-                <div class="flex md:w-2/3 h-fit text-left">
-                    <pre class="demo-code"><code class="language-rust">{{body_type.code}}</code></pre>
-                </div>
-                {{/if}}
-            </div>
-        </div>
-        {{/each}}
     </div>
 </section>
 
