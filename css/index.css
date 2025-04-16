@@ -168,29 +168,42 @@ body {
 
 /* Feature cards */
 .feature-card {
-    background-color: white;
-    border-radius: 0.5rem;
-    padding: 2rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s, box-shadow 0.3s;
-    height: 100%;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(30, 42, 99, 0.08);
+    padding: 2.5rem 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.2s, transform 0.2s;
+    height: 100%;
+    /* Ensure all cards have same height */
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 32px 0 rgba(30, 42, 99, 0.16);
+    transform: translateY(-4px) scale(1.01);
 }
 
 .feature-icon {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 0.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.75rem;
     margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.feature-card ul {
+    flex-grow: 1;
+    /* Make the list take available space to push the link to bottom */
+}
+
+.feature-card a {
+    margin-top: auto;
+    /* Push links to the bottom of cards */
 }
 
 .feature-item {
@@ -444,6 +457,8 @@ header.sticky nav .nav-icon:hover {
     flex-direction: column;
     align-items: flex-start;
     transition: box-shadow 0.2s, transform 0.2s;
+    height: 100%;
+    /* Ensure all cards have same height */
 }
 
 .feature-card:hover {
@@ -460,6 +475,16 @@ header.sticky nav .nav-icon:hover {
     border-radius: 0.75rem;
     margin-bottom: 1.5rem;
     font-size: 2rem;
+}
+
+.feature-card ul {
+    flex-grow: 1;
+    /* Make the list take available space to push the link to bottom */
+}
+
+.feature-card a {
+    margin-top: auto;
+    /* Push links to the bottom of cards */
 }
 
 .feature-item {
