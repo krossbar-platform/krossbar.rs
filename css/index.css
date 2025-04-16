@@ -1,13 +1,8 @@
 /* Base styles */
 body {
-<<<<<<< Updated upstream
-    font-family: 'Inter', sans-serif;
-    color: #374151;
-=======
     font-family: 'Inter', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
     color: #23272f;
     background: #f8fafc;
->>>>>>> Stashed changes
 }
 
 /* Hero section */
