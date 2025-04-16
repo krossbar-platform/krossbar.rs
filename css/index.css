@@ -1,6 +1,6 @@
 /* Base styles */
 body {
-    font-family: Verdana, Arial, Tahoma, Serif !important;
+    font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", monospace !important;
     color: #23272f;
     background: #f8fafc;
 }
@@ -177,7 +177,7 @@ body {
     align-items: flex-start;
     transition: box-shadow 0.2s;
     height: 100%;
-    /* Ensure all cards have same height */
+    /* Maintain full height */
 }
 
 .feature-card:hover {
@@ -196,14 +196,23 @@ body {
     font-size: 2rem;
 }
 
+.feature-card h3 {
+    margin-bottom: 0.5rem;
+}
+
 .feature-card ul {
     flex-grow: 1;
-    /* Make the list take available space to push the link to bottom */
+    /* Make the list take up available space */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .feature-card a {
     margin-top: auto;
-    /* Push links to the bottom of cards */
+    /* Push links to bottom */
+    align-self: flex-start;
 }
 
 .feature-item {
@@ -502,12 +511,15 @@ header.sticky nav .nav-icon:focus {
 
 .feature-card ul {
     flex-grow: 1;
-    /* Make the list take available space to push the link to bottom */
+    /* Make the list take available space */
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .feature-card a {
     margin-top: auto;
     /* Push links to the bottom of cards */
+    align-self: flex-start;
 }
 
 .feature-item {
