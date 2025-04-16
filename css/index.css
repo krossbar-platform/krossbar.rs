@@ -1,8 +1,14 @@
 /* Base styles */
 body {
-    font-family: 'Inter', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Arial, Tahoma, Serif !important;
     color: #23272f;
     background: #f8fafc;
+}
+
+.container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Hero section */
@@ -44,11 +50,18 @@ body {
     color: #4B5563;
     font-weight: 500;
     padding-bottom: 2px;
-    transition: color 0.2s;
+    transition: color 0.2s, background 0.2s;
+    text-decoration: none !important;
+    outline: none;
+    box-shadow: none;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link:focus {
     color: #111827;
+    background: #f3f4f6;
+    text-decoration: none !important;
+    outline: none;
+    box-shadow: none;
 }
 
 .nav-link::after {
@@ -58,12 +71,13 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #1e2a63;
+    background-color: transparent;
     transition: width 0.3s;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+.nav-link:hover::after, .nav-link:focus::after {
+    width: 0;
+    background-color: transparent;
 }
 
 .mobile-nav-link {
@@ -490,4 +504,14 @@ header.sticky nav .nav-icon:hover {
 .cta-section>.container {
     position: relative;
     z-index: 1;
+}
+
+@media (min-width: 1536px) {
+    .container {
+        width: 70% !important;
+    }
+
+    #features {
+        min-height: 400px;
+    }
 }
