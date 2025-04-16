@@ -231,12 +231,12 @@ body {
     border-radius: 1rem;
     box-shadow: 0 2px 16px 0 rgba(30, 42, 99, 0.08);
     background: #fff;
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow 0.2s;
 }
 
 .demo-block:hover {
     box-shadow: 0 8px 32px 0 rgba(30, 42, 99, 0.16);
-    transform: translateY(-2px) scale(1.01);
+    /* Removed transform: translateY(-2px) scale(1.01); */
 }
 
 .demo-player, .demo-code {
@@ -305,10 +305,18 @@ body {
     position: relative;
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover {
     background: #f3f4f6;
     color: #111827;
     text-decoration: none;
+}
+
+.nav-link:focus {
+    background: #1e2a63;
+    color: #ffffff;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(30, 42, 99, 0.4);
 }
 
 .nav-icon {
@@ -320,9 +328,16 @@ body {
     transition: background 0.15s, color 0.15s;
 }
 
-.nav-icon:hover, .nav-icon:focus {
+.nav-icon:hover {
     background: #f3f4f6;
     color: #1e293b;
+}
+
+.nav-icon:focus {
+    background: #1e2a63;
+    color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(30, 42, 99, 0.4);
 }
 
 .hero-section {
@@ -365,6 +380,15 @@ header.sticky nav .nav-link:hover,
 header.sticky nav .nav-icon:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.08);
+}
+
+header.sticky nav a:focus,
+header.sticky nav .nav-link:focus,
+header.sticky nav .nav-icon:focus {
+    color: #fff;
+    background: rgba(30, 42, 99, 0.8);
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .btn-primary {
