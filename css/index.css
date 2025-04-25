@@ -236,8 +236,6 @@ header.sticky nav .nav-icon:focus {
     flex-direction: column;
     align-items: flex-start;
     transition: box-shadow 0.2s;
-    height: 100%;
-    /* Ensure all cards have same height */
 }
 
 .feature-card:hover {
