@@ -304,10 +304,26 @@ pre code.hljs {
 }
 
 .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateX(100%);
+    /* Start off-screen to the right */
+    transition: transform 0.5s ease;
     display: none;
 }
 
 .carousel-item.active {
+    position: relative;
+    transform: translateX(0);
+    /* Centered when active */
+    display: block;
+}
+
+.carousel-item.previous {
+    transform: translateX(-100%);
+    /* Move to the left when becoming inactive */
     display: block;
 }
 
