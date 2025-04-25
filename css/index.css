@@ -25,7 +25,7 @@ body {
 
 /* Hero section */
 .hero-section {
-    background: linear-gradient(135deg, #1e2a63 0%, #162454 100%);
+    background: linear-gradient(135deg, #1e3c63 0%, #163754 100%);
     position: relative;
     overflow: hidden;
 }
@@ -485,7 +485,7 @@ pre code.hljs {
 
 /* CTA section */
 .cta-section {
-    background: linear-gradient(135deg, #1e2a63 0%, #162454 100%);
+    background: linear-gradient(135deg, #1e3c63 0%, #163754 100%);
     position: relative;
     overflow: hidden;
 }
