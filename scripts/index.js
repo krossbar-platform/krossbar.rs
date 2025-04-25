@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Mobile menu toggle functionality
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navItems = document.getElementById('nav-items');
+
+    if (mobileMenuToggle && navItems) {
+        mobileMenuToggle.addEventListener('click', function () {
+            navItems.classList.toggle('show');
+
+            // Change the icon to X when menu is open
+            const isOpen = navItems.classList.contains('show');
+            if (isOpen) {
+                mobileMenuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>';
+            } else {
+                mobileMenuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
+            }
+        });
+
+        // Close mobile menu when clicking a navigation link
+        navItems.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function () {
+                navItems.classList.remove('show');
+                mobileMenuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
+            });
+        });
+
+        // Handle window resize to reset mobile menu
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && navItems.classList.contains('show')) {
+                navItems.classList.remove('show');
+                mobileMenuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
+            }
+        });
+    }
+
     // Initialize demos
     document.querySelectorAll('.demo-player').forEach(function (player) {
         let demo_path = 'demos/' + player.getAttribute("name") + ".cast";
@@ -11,7 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
             cols: 86,
             terminalFontSize: "16px",
             fit: false,
-            poster: 'npt:0:1'
+            poster: 'npt:0:1',
+            // Add responsive handling for the player
+            fitAddon: true
         });
     });
 
@@ -212,7 +248,9 @@ function initCarousels() {
                         cols: 86,
                         terminalFontSize: "16px",
                         fit: false,
-                        poster: 'npt:0:1'
+                        poster: 'npt:0:1',
+                        // Add responsive handling for the player
+                        fitAddon: true
                     });
                 }
 
@@ -220,6 +258,39 @@ function initCarousels() {
                 isAnimating = false;
 
             }, 500); // Match this with the CSS transition duration
+        }
+
+        // Add touch swipe functionality for mobile devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // Minimum distance for a swipe
+
+            if (!isAnimating) {
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe left, go to next slide
+                    direction = 'next';
+                    currentIndex = (currentIndex + 1) % totalItems;
+                    updateSlides();
+                }
+
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe right, go to previous slide
+                    direction = 'prev';
+                    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                    updateSlides();
+                }
+            }
         }
     });
 }

@@ -22,18 +22,6 @@
     <script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.7.1/dist/bundle/asciinema-player.min.js"></script>
     <script src="/scripts/index.js"></script>
     <link rel="stylesheet" href="/css/index.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['"Ubuntu Sans Mono"', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
 <body class="font-sans bg-gray-50 text-gray-800">
@@ -67,15 +55,42 @@
                     </svg>
                 </a>
             </div>
-            <button class="md:hidden flex items-center px-3 py-2 border rounded text-gray-700 border-gray-300"
-                aria-label="Open menu">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
         </nav>
+<!-- Mobile navigation menu -->
+<div class="nav-items md:hidden" id="nav-items">
+    <div class="container mx-auto px-4 py-2 bg-white shadow-lg">
+        <a href="/book/" class="nav-link block py-2">Book</a>
+        <a href="/faq" class="nav-link block py-2">FAQ</a>
+        <a href="/contacts" class="nav-link block py-2">Contacts</a>
+        <div class="flex space-x-4 py-2">
+            <a href="https://github.com/krossbar-platform" class="nav-icon" title="GitHub" target="_blank"
+                rel="noopener noreferrer">
+                <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+            </a>
+            <a href="https://crates.io/search?q=krossbar" class="nav-icon" title="Crates.io" target="_blank"
+                rel="noopener noreferrer">
+                <img src="https://crates.io/assets/cargo.png" alt="Crates.io" class="h-7 w-7">
+            </a>
+            <a href="https://docs.rs/releases/search?query=krossbar" class="nav-icon" title="Docs.rs" target="_blank"
+                rel="noopener noreferrer">
+                <svg width="28" height="28" fill="currentColor" viewBox="0 0 576 512">
+                    <path
+                        d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
     </header>
     <div class="h-20"></div>
-    </body>
+</body>
 
-    </html>
+</html>
