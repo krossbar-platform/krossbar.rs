@@ -537,7 +537,6 @@ pre code.hljs {
 
     .nav-items {
         display: none;
-        position: absolute;
         top: 100%;
         left: 0;
         right: 0;
@@ -554,7 +553,19 @@ pre code.hljs {
 
     .nav-items a {
         width: 100%;
-        padding: 0.75rem 1.5rem;
+        font-size: larger;
+    }
+
+    .nav-icon svg {
+        width: 60px;
+        height: 60px;
+        margin: auto;
+    }
+
+    .nav-icon img {
+        width: 60px;
+        height: 60px;
+        margin: auto;
     }
 
     header.sticky .nav-items {
